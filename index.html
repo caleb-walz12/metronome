@@ -9,27 +9,31 @@
   <body>
     <div id="app">
       <h1>Metronome</h1>
-      <input type="range" name="tempo" id="tempo" min="30" max="300" value="120" />
-      <div>
-        <select name="tempo-note" id="tempo-note">
-          <option value="eighth">&#9834;</option>
-          <option selected value="quarter">&#9833;</option>
-          <option value="dotted-quarter">&#9833;.</option>
-          <option value="half">&#x1D15E;</option>
-        </select>
-        = <span id="tempo-num">120</span>
+      <div class="tempo controls">
+        <input type="range" name="tempo" id="tempo" min="30" max="300" value="120" />
+        <div>
+          <select name="tempo-note" id="tempo-note">
+            <option value="eighth">&#9834;</option>
+            <option selected value="quarter">&#9833;</option>
+            <option value="dotted-quarter">&#9833;.</option>
+            <option value="half">&#x1D15E;</option>
+          </select>
+          <label for="tempo-note">= <span id="tempo-num">120</span></label>
+        </div>
       </div>
-      <select name="time-sigs" id="time-sigs">
-        <option value="1/4">1/4</option>
-        <option value="2/4">2/4</option>
-        <option value="3/4">3/4</option>
-        <option selected value="4/4">4/4</option>
-        <option value="5/4">5/4</option>
-        <option value="6/8">6/8</option>
-        <option value="12/8">12/8</option>
-        <option value="2/2">2/2</option>
-      </select>
-      <button type="button" name="play-pause" id="play-pause" role="switch" aria-checked="false">Play</button>
+      <div class="play controls">
+        <select name="time-sigs" id="time-sigs">
+          <option value="1/4">1/4</option>
+          <option value="2/4">2/4</option>
+          <option value="3/4">3/4</option>
+          <option selected value="4/4">4/4</option>
+          <option value="5/4">5/4</option>
+          <option value="6/8">6/8</option>
+          <option value="12/8">12/8</option>
+          <option value="2/2">2/2</option>
+        </select>
+        <button type="button" name="play-pause" id="play-pause" role="switch" aria-checked="false">Play</button>
+      </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

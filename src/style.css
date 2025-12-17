@@ -1,0 +1,35 @@
+:root {
+  font-family: system-ui, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+#app {
+  padding: 2rem;
+  text-align: center;
+}
+
+#tempo {
+  width: 300px;
+}
+
+.controls {
+  padding: 0.75rem;
+}
+
+.tempo {
+  display: flex;
+}
+
+button,
+select {
+  font-family: inherit;
+}
