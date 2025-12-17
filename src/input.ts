@@ -1,27 +1,59 @@
-let bpmSlider: HTMLInputElement;
-let bpm: number = 120;
+let tempoSlider: HTMLInputElement;
+let tempo: number = 120;
+let tempoNoteSelect: HTMLSelectElement;
+let tempoNote: number = 0.25;
 let timeSigSelect: HTMLSelectElement;
 const timeSig: number[] = [4, 4];
 let playPauseButton: HTMLButtonElement;
 let playing = false;
 
-export function setupBpmSlider() {
-  bpmSlider = document.querySelector<HTMLInputElement>("#bpm")!;
-  bpmSlider.addEventListener("input", () => {
-    bpm = parseInt(bpmSlider.value);
-    document.querySelector("#bpm-num")!.textContent = bpmSlider.value;
+export function setupTempoSlider() {
+  tempoSlider = document.querySelector<HTMLInputElement>("#tempo")!;
+  tempoSlider.addEventListener("input", () => {
+    tempo = parseInt(tempoSlider.value);
+    document.querySelector("#tempo-num")!.textContent = tempoSlider.value;
   });
 }
 
-export function getBpm(): number {
-  if (bpmSlider == null) {
-    console.error("Bpm slider has not been set up yet, bpm value may not be accurate");
+export function getTempo(): number {
+  if (tempoSlider == null) {
+    console.error("Tempo slider has not been set up yet, tempo value may not be accurate");
   }
 
-  return bpm;
+  return tempo;
 }
 
-export function setupTimesSelect() {
+export function setupTempoNoteSelect() {
+  tempoNoteSelect = document.querySelector<HTMLSelectElement>("#tempo-note")!;
+  tempoNoteSelect.addEventListener("change", () => {
+    switch (tempoNoteSelect.value) {
+      case "eighth":
+        tempoNote = 0.125;
+        break;
+      case "quarter":
+        tempoNote = 0.25;
+        break;
+      case "dotted-quarter":
+        tempoNote = 0.375;
+        break;
+      case "half":
+        tempoNote = 0.5;
+        break;
+      default:
+        console.error("Unknown tempo note value");
+    }
+  });
+}
+
+export function getTempoNote(): number {
+  if (tempoNoteSelect == null) {
+    console.error("Tempo note select has not been set up yet, tempo note value may not be accurate");
+  }
+
+  return tempoNote;
+}
+
+export function setupTimeSigSelect() {
   timeSigSelect = document.querySelector<HTMLSelectElement>("#time-sigs")!;
   timeSigSelect.addEventListener("change", () => {
     const timeVal = timeSigSelect.value;

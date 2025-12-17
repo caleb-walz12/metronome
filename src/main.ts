@@ -1,5 +1,6 @@
-import { setupBpmSlider, setupPlayPauseButton, setupTimesSelect } from "./input";
+import { setupTempoSlider, setupTempoNoteSelect, setupPlayPauseButton, setupTimeSigSelect } from "./input";
 
-setupBpmSlider();
-setupTimesSelect();
+setupTempoSlider();
+setupTempoNoteSelect();
+setupTimeSigSelect();
 setupPlayPauseButton();

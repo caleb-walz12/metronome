@@ -9,8 +9,16 @@
   <body>
     <div id="app">
       <h1>Metronome</h1>
-      <input type="range" name="bpm" id="bpm" min="30" max="300" value="120" />
-      <label for="bpm">&#9833; = <span id="bpm-num">120</span></label>
+      <input type="range" name="tempo" id="tempo" min="30" max="300" value="120" />
+      <div>
+        <select name="tempo-note" id="tempo-note">
+          <option value="eighth">&#9834;</option>
+          <option selected value="quarter">&#9833;</option>
+          <option value="dotted-quarter">&#9833;.</option>
+          <option value="half">&#x1D15E;</option>
+        </select>
+        = <span id="tempo-num">120</span>
+      </div>
       <select name="time-sigs" id="time-sigs">
         <option value="1/4">1/4</option>
         <option value="2/4">2/4</option>
@@ -19,6 +27,7 @@
         <option value="5/4">5/4</option>
         <option value="6/8">6/8</option>
         <option value="12/8">12/8</option>
+        <option value="2/2">2/2</option>
       </select>
       <button type="button" name="play-pause" id="play-pause" role="switch" aria-checked="false">Play</button>
     </div>
