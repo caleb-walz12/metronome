@@ -7,7 +7,21 @@
     <title>Metronome</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>Metronome</h1>
+      <input type="range" name="bpm" id="bpm" min="30" max="300" value="120" />
+      <label for="bpm">&#9833; = <span id="bpm-num">120</span></label>
+      <select name="time-sigs" id="time-sigs">
+        <option value="1/4">1/4</option>
+        <option value="2/4">2/4</option>
+        <option value="3/4">3/4</option>
+        <option selected value="4/4">4/4</option>
+        <option value="5/4">5/4</option>
+        <option value="6/8">6/8</option>
+        <option value="12/8">12/8</option>
+      </select>
+      <button type="button" name="play-pause" id="play-pause" role="switch" aria-checked="false">Play</button>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
