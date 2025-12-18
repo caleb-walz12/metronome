@@ -13,7 +13,7 @@ export function setupTempoSlider() {
   tempoSlider = document.querySelector<HTMLInputElement>("#tempo")!;
   tempoSlider.addEventListener("input", () => {
     tempo = parseInt(tempoSlider.value);
-    document.querySelector("#tempo-num")!.textContent = tempoSlider.value;
+    document.querySelector("#tempo-num")!.textContent = `= ${tempoSlider.value}`;
   });
 }
 

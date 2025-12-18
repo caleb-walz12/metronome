@@ -3,33 +3,50 @@
   line-height: 1.5;
 
   color-scheme: light dark;
+  color: #222222;
+  background-color: #f8f8f8;
 }
 
 body {
   margin: 0;
   display: flex;
-  flex-direction: column;
-  place-items: center;
+  place-content: center;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.1;
+  margin: 1rem;
 }
 
 #app {
+  max-width: 1280px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
   padding: 2rem;
-  text-align: center;
 }
 
 #tempo {
-  width: 300px;
+  width: 100%;
 }
 
-.controls {
-  padding: 0.75rem;
-}
-
-.tempo {
-  display: flex;
+.control {
+  margin: 0.5rem;
 }
 
 button,
 select {
   font-family: inherit;
+  font-size: 1.1rem;
+  padding: 0.4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #f8f8f8;
+    background-color: #222222;
+  }
 }
