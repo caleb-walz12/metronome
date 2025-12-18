@@ -40,7 +40,7 @@ function scheduleClick(time: number, duration: number, frequency: number) {
   });
 
   const gainNode = new GainNode(audioContext, {
-    gain: 0.7,
+    gain: 0.5,
   });
 
   gainNode.gain.setTargetAtTime(0.01, time + duration - 0.005, 0.005);
