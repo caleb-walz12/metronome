@@ -39,21 +39,13 @@ function scheduleClick(time: number, duration: number, frequency: number) {
     frequency: frequency,
   });
 
-  const limiterNode = new DynamicsCompressorNode(audioContext, {
-    threshold: -1,
-    knee: 0,
-    ratio: 20,
-    attack: 0,
-    release: 0.015,
-  });
-
   const gainNode = new GainNode(audioContext, {
     gain: 0.7,
   });
 
   gainNode.gain.setTargetAtTime(0.01, time + duration - 0.005, 0.005);
 
-  clickNode.connect(limiterNode).connect(gainNode).connect(audioContext.destination);
+  clickNode.connect(gainNode).connect(audioContext.destination);
   clickNode.start(time);
   clickNode.stop(time + duration);
 }
