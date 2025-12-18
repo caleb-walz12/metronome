@@ -1,4 +1,5 @@
 import { play, resetCurrentBeat } from "./audio";
+import { setOffIcon, setOnIcon } from "./main";
 
 let tempoSlider: HTMLInputElement;
 let tempo: number = 120;
@@ -94,10 +95,12 @@ export function setupPlayPauseButton() {
       playing = true;
       playPauseButton.textContent = "Pause";
       play();
+      setOnIcon();
     } else {
       playing = false;
       playPauseButton.textContent = "Play";
       resetCurrentBeat();
+      setOffIcon();
     }
     playPauseButton.ariaChecked = playing.toString();
   });
