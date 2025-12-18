@@ -4,7 +4,7 @@ import tseslint from "typescript-eslint";
 import prettierConfig from "eslint-config-prettier/flat";
 
 export default defineConfig(
-  [globalIgnores(["eslint.config.mjs"])],
+  [globalIgnores(["eslint.config.mjs", "vite.config.ts"])],
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   {
