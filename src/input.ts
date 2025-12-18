@@ -1,3 +1,5 @@
+import { play, resetCurrentBeat } from "./audio";
+
 let tempoSlider: HTMLInputElement;
 let tempo: number = 120;
 let tempoNoteSelect: HTMLSelectElement;
@@ -59,6 +61,7 @@ export function setupTimeSigSelect() {
     const timeVal = timeSigSelect.value;
     timeSig[0] = parseInt(timeVal.split("/")[0]);
     timeSig[1] = parseInt(timeVal.split("/")[1]);
+    resetCurrentBeat();
   });
 }
 
@@ -76,9 +79,11 @@ export function setupPlayPauseButton() {
     if (!playing) {
       playing = true;
       playPauseButton.textContent = "Pause";
+      play();
     } else {
       playing = false;
       playPauseButton.textContent = "Play";
+      resetCurrentBeat();
     }
     playPauseButton.ariaChecked = playing.toString();
   });
