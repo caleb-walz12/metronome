@@ -13,7 +13,21 @@ export function setupTempoSlider() {
   tempoSlider = document.querySelector<HTMLInputElement>("#tempo")!;
   tempoSlider.addEventListener("input", () => {
     tempo = parseInt(tempoSlider.value);
-    document.querySelector("#tempo-num")!.textContent = `= ${tempoSlider.value}`;
+    document.querySelector("#tempo-num")!.textContent = `= ${tempo}`;
+  });
+
+  const tempoMinus = document.querySelector<HTMLButtonElement>("#tempo-minus")!;
+  tempoMinus.addEventListener("click", () => {
+    tempo--;
+    document.querySelector("#tempo-num")!.textContent = `= ${tempo}`;
+    tempoSlider.value = tempo.toString();
+  });
+
+  const tempoPlus = document.querySelector<HTMLButtonElement>("#tempo-plus")!;
+  tempoPlus.addEventListener("click", () => {
+    tempo++;
+    document.querySelector("#tempo-num")!.textContent = `= ${tempo}`;
+    tempoSlider.value = tempo.toString();
   });
 }
 

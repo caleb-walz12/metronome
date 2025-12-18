@@ -5,6 +5,10 @@
   color-scheme: light dark;
   color: #222222;
   background-color: #f8f8f8;
+
+  --btn-color: #f0f0f0;
+  --btn-hover: #dbdbdb;
+  --btn-active: #777;
 }
 
 body {
@@ -12,12 +16,13 @@ body {
   display: flex;
   place-content: center;
   min-height: 100vh;
+  min-width: 320px;
 }
 
 h1 {
   font-size: 3em;
   line-height: 1.1;
-  margin: 1rem;
+  margin: 1rem 4rem 1rem;
 }
 
 #app {
@@ -25,28 +30,71 @@ h1 {
   align-self: center;
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
   padding: 2rem;
+}
+
+.tempo {
+  width: 90%;
+  display: flex;
+  justify-content: center;
 }
 
 #tempo {
   width: 100%;
+  min-width: 0;
+}
+
+.slider-button {
+  font-family: monospace;
+  font-size: 1.5rem;
+  padding: 0.2rem;
+  margin: 0.2rem;
+}
+
+#play-pause {
+  width: 50%;
 }
 
 .control {
   margin: 0.5rem;
 }
 
+label {
+  font-size: 1.2rem;
+}
+
 button,
 select {
   font-family: inherit;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   padding: 0.4rem;
+  border-radius: 12px;
+  border: 1px solid #aaa;
+  background-color: var(--btn-color);
+  transition: background-color 0.25s;
+}
+
+button:hover,
+select:hover {
+  background-color: var(--btn-hover);
+}
+
+button:active {
+  background-color: var(--btn-active);
+}
+
+select:open {
+  background-color: var(--btn-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color: #f8f8f8;
     background-color: #222222;
+
+    --btn-color: #777;
+    --btn-hover: #939393;
+    --btn-active: #b2b2b2;
   }
 }

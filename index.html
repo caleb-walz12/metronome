@@ -9,7 +9,12 @@
   <body>
     <div id="app">
       <h1>Metronome</h1>
-      <input type="range" name="tempo" class="control" id="tempo" min="30" max="300" value="120" />
+      <div class="tempo control">
+        <button type="button" name="tempo-minus" class="slider-button" id="tempo-minus">-</button>
+        <input type="range" name="tempo" id="tempo" min="30" max="300" value="120" />
+        <button type="button" name="tempo-plus" class="slider-button" id="tempo-plus">+</button>
+      </div>
+
       <div class="control">
         <select name="tempo-note" id="tempo-note">
           <option value="eighth">&#9834;</option>
